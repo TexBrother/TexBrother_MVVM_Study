@@ -1,0 +1,6 @@
+framework module Pods_TexBrother_MVVM_Study {
+  umbrella header "Pods-TexBrother_MVVM_Study-umbrella.h"
+
+  export *
+  module * { export * }
+}
