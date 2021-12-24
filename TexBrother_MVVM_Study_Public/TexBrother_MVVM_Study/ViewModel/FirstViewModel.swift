@@ -28,7 +28,29 @@ final class FirstViewModel {
 // MARK: - Extensions
 
 extension FirstViewModel {
-//    TODO
-//    func transform (input : Input) -> Output {
-//    }
+    func transform (input : Input) -> Output {
+      
+      let temp : Observable<[ButtonModel]> =
+        Observable.just(
+            [
+                .init(buttonNumber: 1, buttonInfo: "첫 번째 버튼입니다."),
+                .init(buttonNumber: 2, buttonInfo: "두 번째 버튼입니다."),
+                .init(buttonNumber: 3, buttonInfo: "세 번째 버튼입니다.")
+            ]
+        )
+      
+      let selectedItem = input.buttonClicked
+        .flatMapLatest{ idx -> Observable<ButtonModel> in
+        let selected = temp.map {
+          $0.first(where: {$0.buttonNumber == idx})!
+        }
+        return selected
+      }
+      
+      let count: Observable<Int> = input.textFieldString.map {
+        $0.count
+      }
+      
+      return Output(selectedButton: selectedItem, textCount: count)
+    }
 }
