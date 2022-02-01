@@ -110,6 +110,7 @@ final class SecondViewController: BaseViewController {
             state: .normal,
             radius: 0
         )
+        $0.addTarget(self, action: #selector(touchupNextButton), for: .touchUpInside)
     }
     
     // MARK: - Variables
@@ -252,5 +253,13 @@ extension SecondViewController {
         }
         .bind(to: promotionAgreeSubject)
         .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Action Helpers
+    
+    @objc
+    private func touchupNextButton() {
+        let secondVC = ThirdViewController()
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }
