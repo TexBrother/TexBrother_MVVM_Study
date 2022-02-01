@@ -41,6 +41,10 @@
 		CC4D779C27A911EC00B9B685 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D779B27A911EB00B9B685 /* SecondViewController.swift */; };
 		CC4D779E27A918DE00B9B685 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D779D27A918DE00B9B685 /* SecondViewModel.swift */; };
 		CC4D77A027A9192400B9B685 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D779F27A9192400B9B685 /* RegisterModel.swift */; };
+		CCF0BC4627A9B42E00D265FB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0BC4527A9B42E00D265FB /* ThirdViewController.swift */; };
+		CCF0BC4827A9B5B900D265FB /* EmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0BC4727A9B5B900D265FB /* EmailTableViewCell.swift */; };
+		CCF0BC4A27A9B8E500D265FB /* EmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0BC4927A9B8E500D265FB /* EmailModel.swift */; };
+		CCF0BC4C27A9B96600D265FB /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0BC4B27A9B96600D265FB /* ThirdViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		CC4D779B27A911EB00B9B685 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CC4D779D27A918DE00B9B685 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		CC4D779F27A9192400B9B685 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		CCF0BC4527A9B42E00D265FB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		CCF0BC4727A9B5B900D265FB /* EmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTableViewCell.swift; sourceTree = "<group>"; };
+		CCF0BC4927A9B8E500D265FB /* EmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailModel.swift; sourceTree = "<group>"; };
+		CCF0BC4B27A9B96600D265FB /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 				CC15E9912775C579005A1632 /* Global */,
 				CC15E9882775C3ED005A1632 /* ViewModel */,
 				CC15E9872775C3E8005A1632 /* View */,
+				CCF0BC4327A9B41200D265FB /* Reusable */,
 				CC15E9862775C3D2005A1632 /* Model */,
 				CC15E9892775C3F9005A1632 /* Support */,
 			);
@@ -148,6 +157,7 @@
 			children = (
 				CC15E9E32775C6DB005A1632 /* ButtonModel.swift */,
 				CC4D779F27A9192400B9B685 /* RegisterModel.swift */,
+				CCF0BC4927A9B8E500D265FB /* EmailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 			children = (
 				CC15E9DF2775C6AB005A1632 /* FirstViewController.swift */,
 				CC4D779B27A911EB00B9B685 /* SecondViewController.swift */,
+				CCF0BC4527A9B42E00D265FB /* ThirdViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			children = (
 				CC15E9E12775C6BC005A1632 /* FirstViewModel.swift */,
 				CC4D779D27A918DE00B9B685 /* SecondViewModel.swift */,
+				CCF0BC4B27A9B96600D265FB /* ThirdViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,6 +244,22 @@
 				CC15E9DD2775C633005A1632 /* Identifiable.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CCF0BC4327A9B41200D265FB /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				CCF0BC4427A9B41B00D265FB /* TableViewCell */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		CCF0BC4427A9B41B00D265FB /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCF0BC4727A9B5B900D265FB /* EmailTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC15E9D52775C5A6005A1632 /* UITabBar+.swift in Sources */,
+				CCF0BC4627A9B42E00D265FB /* ThirdViewController.swift in Sources */,
 				CC15E9C92775C5A6005A1632 /* UIViewController+.swift in Sources */,
 				CC15E9E42775C6DB005A1632 /* ButtonModel.swift in Sources */,
 				CC15E9C82775C5A6005A1632 /* UIView+.swift in Sources */,
@@ -366,8 +395,10 @@
 				CC4D779C27A911EC00B9B685 /* SecondViewController.swift in Sources */,
 				CC15E9DB2775C5EB005A1632 /* BaseViewController.swift in Sources */,
 				CC4D77A027A9192400B9B685 /* RegisterModel.swift in Sources */,
+				CCF0BC4A27A9B8E500D265FB /* EmailModel.swift in Sources */,
 				CC15E9D42775C5A6005A1632 /* CGFloat+.swift in Sources */,
 				CC15E9772775C3C9005A1632 /* ViewController.swift in Sources */,
+				CCF0BC4827A9B5B900D265FB /* EmailTableViewCell.swift in Sources */,
 				CC15E9732775C3C9005A1632 /* AppDelegate.swift in Sources */,
 				CC15E9CE2775C5A6005A1632 /* UIColor+.swift in Sources */,
 				CC15E9CA2775C5A6005A1632 /* UIImageView+.swift in Sources */,
@@ -376,6 +407,7 @@
 				CC15E9D02775C5A6005A1632 /* UITextView+RxCocoa.swift in Sources */,
 				CC15E9C62775C5A6005A1632 /* Double+.swift in Sources */,
 				CC15E9D32775C5A6005A1632 /* Date+.swift in Sources */,
+				CCF0BC4C27A9B96600D265FB /* ThirdViewModel.swift in Sources */,
 				CC15E9CD2775C5A6005A1632 /* UIApplication+.swift in Sources */,
 				CC4D779E27A918DE00B9B685 /* SecondViewModel.swift in Sources */,
 				CC15E9CB2775C5A6005A1632 /* CALayer+.swift in Sources */,
