@@ -67,6 +67,18 @@ final class FirstViewController: BaseViewController {
         $0.setupLabel(text: "0", color: .blackGray1, font: .systemFont(ofSize: 14.adjusted))
     }
     
+    private let nextButton = UIButton().then {
+        $0.setupButton(
+            title: "다음으로",
+            color: .systemBlue,
+            font: .systemFont(ofSize: 14.adjusted, weight: .medium),
+            backgroundColor: .clear,
+            state: .normal,
+            radius: 0.adjusted
+        )
+        $0.addTarget(self, action: #selector(touchupNextButton), for: .touchUpInside)
+    }
+    
     // MARK: - Variables
     
     private let viewModel = FirstViewModel()
@@ -96,7 +108,8 @@ extension FirstViewController {
                 thirdButton,
                 buttonLabel,
                 countTextField,
-                countLabel
+                countLabel,
+                nextButton
             ]
         )
         
@@ -130,6 +143,13 @@ extension FirstViewController {
         countLabel.snp.makeConstraints {
             $0.centerY.equalTo(self.countTextField)
             $0.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-20.adjusted)
+        }
+        
+        nextButton.snp.makeConstraints {
+            $0.top.equalTo(self.countTextField.snp.bottom).offset(20.adjusted)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(50.adjusted)
+            $0.height.equalTo(25.adjusted)
         }
     }
     
@@ -188,5 +208,13 @@ extension FirstViewController {
         countTextField.rx.text.orEmpty
             .bind(to: textSubject)
             .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Action Helpers
+    
+    @objc
+    private func touchupNextButton() {
+        let secondVC = SecondViewController()
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }
