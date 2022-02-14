@@ -17,12 +17,12 @@ struct RegisterModel {
   let promotion: Bool
 }
 
-// TODO - Regex
+// TODO: Regex
 
 enum ValidationRegex: String {
-  case email = "TODO"
-  case password = "TODO2"
-  case nickname = "TODO3"
+  case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+  case password = "[A-Za-z0-9!_@$%^&+=]{8,}"
+  case nickname = "[A-Za-z]{2,}"
 }
 
 extension String {

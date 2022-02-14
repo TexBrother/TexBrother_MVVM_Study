@@ -42,12 +42,18 @@ extension SecondViewModel {
           return temp
         }
       
-      // TODO - validate using regex
+      // TODO: validate using regex
       // HINT - CombineLatest, flatMapLatest
-//
-//      let enabled =
-//      let register =
-//      return .init(registerResult: register, registerEnabled: enabled)
+	  
+	  let enabled = Observable.combineLatest(input.emailText,
+											 input.passwordText,
+											 input.nickNameText)
+		  .map { email, password, nickname -> Bool in
+			  print( email.validate(with: email) && password.validate(with: .password) && nickname.validate(with: .nickname))
+			  
+			  return (email.validate(with: email) && password.validate(with: .password) && nickname.validate(with: .nickname))
+	  }
 
+	  return .init(registerResult: registerModel, registerEnabled: enabled.asObservable())
   }
 }
