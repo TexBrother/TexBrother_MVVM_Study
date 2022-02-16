@@ -20,9 +20,9 @@ struct RegisterModel {
 // TODO - Regex
 
 enum ValidationRegex: String {
-  case email = "TODO"
-  case password = "TODO2"
-  case nickname = "TODO3"
+  case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+  case password = "^(?=.*[!@#$%^&*()_+=-])(?=.*[0-9])(?=.*[A-Za-z]).{8,}"
+  case nickname = ".{2,}"
 }
 
 extension String {

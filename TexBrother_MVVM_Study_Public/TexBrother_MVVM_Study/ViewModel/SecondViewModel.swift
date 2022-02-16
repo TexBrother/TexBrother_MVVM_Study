@@ -25,8 +25,8 @@ final class SecondViewModel {
     let registerEnabled: Observable<Bool>
   }
 }
-extension SecondViewModel {
 
+extension SecondViewModel {
   func transform (input: Input) -> Output {
       let registerModel = Observable.combineLatest(input.emailText,
                                                    input.passwordText,
@@ -44,10 +44,14 @@ extension SecondViewModel {
       
       // TODO - validate using regex
       // HINT - CombineLatest, flatMapLatest
-//
-//      let enabled =
-//      let register =
-//      return .init(registerResult: register, registerEnabled: enabled)
-
+      let enabled = Observable.combineLatest(input.emailText, input.passwordText, input.nickNameText, input.privacyAgree).map {
+          email, password, nickname, privacyAgree -> Bool in
+          
+          return email.validate(with: .email) && password.validate(with: .password) && nickname.validate(with: .nickname) && privacyAgree
+      }
+      
+      let register = registerModel
+      
+      return .init(registerResult: register, registerEnabled: enabled)
   }
 }

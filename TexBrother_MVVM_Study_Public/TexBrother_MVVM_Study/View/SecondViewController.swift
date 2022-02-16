@@ -231,14 +231,15 @@ extension SecondViewController {
             .bind(to: registerButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        output.registerResult
-            .bind{[weak self] model in
+        registerButton.rx.tap.bind {
+            output.registerResult.bind { [weak self] model in
                 self?.statusLabel.text = """
-            아이디 : \(model.email)
-            비밀번호 : \(model.passWord)
-            닉네임: \(model.nickName)
-            """
-            }.disposed(by: disposeBag)
+                                아이디 : \(model.email)
+                                비밀번호 : \(model.passWord)
+                                닉네임: \(model.nickName)
+                                """
+            }.disposed(by: self.disposeBag)
+        }.disposed(by: disposeBag)
         
         privacyButton.rx.tap.map{ [weak self] in
             self?.privacyButton.isSelected.toggle()
