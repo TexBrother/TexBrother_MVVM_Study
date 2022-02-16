@@ -47,13 +47,19 @@ extension SecondViewModel {
 	  
 	  let enabled = Observable.combineLatest(input.emailText,
 											 input.passwordText,
-											 input.nickNameText)
-		  .map { email, password, nickname -> Bool in
+											 input.nickNameText,
+											 input.privacyAgree)
+		  .map { email, password, nickname, privacy -> Bool in
 			  print( email.validate(with: email) && password.validate(with: .password) && nickname.validate(with: .nickname))
 			  
-			  return (email.validate(with: email) && password.validate(with: .password) && nickname.validate(with: .nickname))
+			  return (
+				email.validate(with: email)
+				&& password.validate(with: .password)
+				&& nickname.validate(with: .nickname)
+				&& privacy
+			  )
 	  }
 
-	  return .init(registerResult: registerModel, registerEnabled: enabled.asObservable())
+	  return .init(registerResult: registerModel.asObservable(), registerEnabled: enabled.asObservable())
   }
 }
