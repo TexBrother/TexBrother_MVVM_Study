@@ -54,11 +54,11 @@ extension ThirdViewModel {
     }
     
     private func addTableView (
-        //action
+        // action
         addItem : Observable<EmailModel>,
         deleteItem: Observable<(IndexPath, EmailModel)>,
         deleteAll: Observable<Void>,
-        //data
+        // data
         usecase : [EmailModel]) -> Observable<[EmailModel]> {
             weak var `self` = self
             enum Action {
